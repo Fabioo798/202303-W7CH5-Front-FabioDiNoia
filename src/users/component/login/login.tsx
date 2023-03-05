@@ -23,9 +23,9 @@ export function LoginForm(props: any) {
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     try {
-      const response = await userApiRepo.logIn(email, password);
+      await userApiRepo.logIn(email, password);
       console.log("Logged in successfully");
-        props.handleLogin();
+      props.handleLogin();
       window.location.reload();
       setEmail("");
       setPassword("");
@@ -33,9 +33,6 @@ export function LoginForm(props: any) {
       console.log(error);
     }
   };
-
-
-
 
   return (
     <form onSubmit={handleSubmit}>

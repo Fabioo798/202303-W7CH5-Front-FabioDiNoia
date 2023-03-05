@@ -14,7 +14,7 @@ const Register = (props: any) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const { results } = await userApiRepo.register(name, email, password);
+      await userApiRepo.register(name, email, password);
       setName("");
       setEmail("");
       setPassword("");
