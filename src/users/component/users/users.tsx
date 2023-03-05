@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { UserApiRepo } from "../../api.repo";
 import { UserStructure } from "../../model/user.model";
 import "./users.css";
 
 const userApiRepo = new UserApiRepo();
 
-interface UserData {
-  name: string;
-  email: string;
-}
 
 function Profile() {
   const [userData, setUserData] = useState<UserStructure[]>([]);
