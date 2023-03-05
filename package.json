@@ -1,5 +1,5 @@
 {
-  "name": "w7ch5-fabio-dinoia",
+  "name": "w6ch5-front-fabio-dinoia",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,13 +21,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
+    "test:prod": "react-scripts test  --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/reportWebVitals.ts",
+      "<rootDir>/src/index.ts"
     ]
   },
   "browserslist": {
@@ -41,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/icons-bi": "^1.2.15",
+    "@testing-library/dom": "^8.20.0",
+    "@testing-library/react": "^13.4.0"
   }
 }
